@@ -1,28 +1,33 @@
 # PurePlay Audio
 
-PurePlay Audio is a local, offline tool for generating ready-to-use musical tracks from complete songs.
+PurePlay Audio is a local, offline system designed to transform complete songs into structured material for musical practice and study.
 
-It focuses on stability, musicality, and reproducible results for musical practice, without relying on cloud services.
+It enables users to isolate key musical elements (vocals, drums, bass, harmony) and generate ready-to-use tracks for singing, rehearsal, and instrumental practice — without modifying the original composition.
 
-## Key characteristics
-- Local processing
-- Offline
-- Deterministic output
-- No cloud
-- No subscriptions
+All processing runs entirely on the local machine. No cloud services, no subscriptions, and no internet connection are required.
+
+## Core Principles
+- 100% local execution
+- Clear separation between AI processing and final output
+- Deterministic and reproducible results
+- No creative automation
+- Focus on stability and real-world usability
 
 ## Use cases
-- Singing practice
+- Vocal practice
 - Instrument practice
 - Rehearsals
 - Studying arrangements
+- Musical analysis
 
 ## Scope and limitations
-PurePlay Audio prioritizes stable and usable results.
-It does not aim for extreme source isolation or creative remixing.
+PurePlay Audio prioritizes stability and usability over extreme source isolation.
+It is not intended for creative remixing, advanced audio editing, or artistic manipulation.
+
+The system is designed to generate consistent, practical results for real musical use.
 
 ## Project status
-PurePlay Audio v1.0 is completed and working.
+PurePlay Audio v1.0 is completed, validated, and fully functional.
 
-The binary distribution is not public.
-Access is available upon request.
+The binary distribution is not publicly available.
+Access can be granted upon request.
