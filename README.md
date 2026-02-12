@@ -1,33 +1,101 @@
 # PurePlay Audio
 
-PurePlay Audio is a local, offline system designed to transform complete songs into structured material for musical practice and study.
+PurePlay Audio is a fully self-contained offline audio processing system that operationalizes an AI-based source separation model (Demucs) into a deterministic Windows standalone executable.
 
-It enables users to isolate key musical elements (vocals, drums, bass, harmony) and generate ready-to-use tracks for singing, rehearsal, and instrumental practice — without modifying the original composition.
+The system embeds its runtime, dependencies, and AI model components, requiring no Python installation, no external services, and no environment configuration.
 
-All processing runs entirely on the local machine. No cloud services, no subscriptions, and no internet connection are required.
+PurePlay represents a transition from development-stage experimentation to production-style standalone operationalization.
 
-## Core Principles
-- 100% local execution
-- Clear separation between AI processing and final output
-- Deterministic and reproducible results
+---
+
+## Architectural Overview
+
+PurePlay is structured around four core layers:
+
+### 1. Runtime Resolution Layer
+- Detects frozen execution (PyInstaller)
+- Dynamically resolves execution paths
+- Isolates input/output directories
+
+### 2. AI Operationalization Layer
+- Embedded Demucs (htdemucs) model
+- CPU execution
+- No runtime downloads
+- No user-adjustable AI parameters
+
+### 3. Deterministic Assembly Layer
+- Predefined audio profiles
+- Direct stem recomposition
+- Peak normalization (~98%)
 - No creative automation
-- Focus on stability and real-world usability
 
-## Use cases
-- Vocal practice
-- Instrument practice
-- Rehearsals
-- Studying arrangements
-- Musical analysis
+### 4. Distribution Layer
+- Packaged using PyInstaller
+- Embedded Python runtime
+- Embedded Torch and model dependencies
+- No modification of host environment
+- Fully offline execution
 
-## Scope and limitations
-PurePlay Audio prioritizes stability and usability over extreme source isolation.
-It is not intended for creative remixing, advanced audio editing, or artistic manipulation.
+---
 
-The system is designed to generate consistent, practical results for real musical use.
+## Design Principles
 
-## Project status
-PurePlay Audio v1.0 is completed, validated, and fully functional.
+- Fail-fast error handling
+- Deterministic and reproducible output
+- No silent recovery
+- No partial output generation
+- No runtime dependency installation
+- Strict scope control
 
-The binary distribution is not publicly available.
-Access can be granted upon request.
+---
+
+## Operationalization Strategy
+
+Initial development relied on environment-dependent execution (WSL and manual dependency management).  
+To eliminate deployment friction and ensure runtime stability:
+
+- The AI model and runtime were embedded into a single executable
+- Environment abstraction was implemented
+- Dependency isolation was enforced
+- Multi-machine validation was performed
+
+The final result is a portable executable with consistent runtime behavior.
+
+---
+
+## Technical Stack
+
+- Python
+- PyTorch
+- Demucs
+- Torchaudio
+- NumPy
+- SoundFile
+- PyInstaller
+
+---
+
+## Scope
+
+PurePlay v1 is intentionally constrained:
+
+Included:
+- AI-based source separation
+- Deterministic audio profile generation
+- Standalone Windows executable
+- Offline processing
+
+Excluded:
+- Creative remixing
+- Adaptive AI behavior
+- Cloud processing
+- User configuration layers
+- External dependency installation
+
+---
+
+## Version
+
+v1.0 — Stable standalone release
+
+Binary distribution is not publicly available.
