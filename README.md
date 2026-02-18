@@ -8,7 +8,7 @@ PurePlay represents a transition from development-stage experimentation to produ
 
 ---
 
-### Strategic Context
+## Strategic Context
 
 PurePlay Audio was built as an AI operationalization exercise: transforming a research-grade deep learning model into a production-style, deterministic, self-contained executable.
 
